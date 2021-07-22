@@ -127,18 +127,18 @@ public class RobotContainer
         // operatorController Button Mapping
 
         //Shoot Mapping + Auto Aim
-        final JoystickButton xboxFireBtn = new JoystickButton(operatorController, XboxController.Button.kBumperRight.value); 
+        final JoystickButton xboxFireBtn = new JoystickButton(operatorController, FIRE_BUTTON); 
         
         xboxFireBtn.whileHeld(new Fire(m_feeder, m_launcher, m_launcherController));
 
-        final JoystickButton xboxTargetBtn = new JoystickButton(driveController, XboxController.Button.kBumperLeft.value);
+        final JoystickButton xboxTargetBtn = new JoystickButton(driveController, AUTOAIM_BUTTON);
         xboxTargetBtn.whileHeld(new LocateTarget(m_drivetrain, m_targeting));
          
         //Wheel Spin Up Mapping
-        final JoystickButton blueZoneBtn = new JoystickButton(operatorController, XboxController.Button.kY.value);
+        final JoystickButton blueZoneBtn = new JoystickButton(operatorController, SHOOTER_BUTTON);
         blueZoneBtn.whenPressed(new SetBlueZone(m_launcherController));
 
-        final JoystickButton greenZoneBtn = new JoystickButton(operatorController, XboxController.Button.kB.value);
+        final JoystickButton greenZoneBtn = new JoystickButton(operatorController, FAST_SHOOTER_BUTTON);
         greenZoneBtn.whenPressed(new SetGreenZone(m_launcherController));
 
         
@@ -152,7 +152,7 @@ public class RobotContainer
          dpadDownButton.whenPressed(new RetractClimber(m_climb));
 
         //toggle BallPickup and Gecko
-        final JoystickButton toggleGeckoBtn = new JoystickButton(operatorController, XboxController.Button.kA.value);        
+        final JoystickButton toggleGeckoBtn = new JoystickButton(operatorController, TOGGLE_GECKO_BUTTON);        
         toggleGeckoBtn.whenPressed(new ToggleGecko( m_ballPickup), true);
         SmartDashboard.putData("toggleGeckoBtn",new ToggleGecko( m_ballPickup ) );
 
